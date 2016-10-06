@@ -1,0 +1,85 @@
+<div class="container">
+    <div class="row">
+        <h1 class="col-sm-12">{{ title }}</h1>
+
+        <div class="col-sm-12">
+            <div class="alert alert-success" role="alert">
+                <em>Interpolation examples</em>
+            </div>
+
+            <h2>Front end tools, libraries & frameworks</h2>
+            <em>Loop through array:</em>
+            <ul>
+                <li *ngFor="let item of frontEnd">{{ item }}</li>
+            </ul>
+
+            <em>Values from object:</em>
+            <h3>{{ detail.name }}</h3>
+            <strong *ngIf="detail.excerpt">{{ detail.excerpt }}</strong>
+            <p>{{ detail.description }}</p>
+            <ul>
+                <li *ngFor="let technology of detail.technologies">{{ technology }}</li>
+            </ul>
+
+            <hr class="row">
+
+            <div class="alert alert-success" role="alert">
+                <em>Property binding examples</em>
+            </div>
+
+            <h3>Form disabled attribute</h3>
+            <p>Disabled attribute can be dependent on Angular2 variable.</p>
+            <label for="name" class="col-form-label">Name</label>
+            <input type="text" class="form-control" id="name" [disabled]="activeInput">
+            
+            <h3>Image src attribute <small class="text-muted">loading from loremflickr.com service <em>(may take a while)</em></small></h3>
+            <img [src]="imageSrc" >
+
+            <hr>
+
+            <div class="alert alert-success" role="alert">
+                <em>Class & style binding examples</em>
+            </div>
+
+            <p>Check class and style manipulations.</p>
+
+            <ul>
+                <li><a href="#" class="first" [class.active]="isActive" [style.backgroundColor]="isActive ? 'yellow' : 'white'">Home</a></li>
+                <li><a href="#" [class.active]="!isActive" [style.color]="isActive ? 'black' : 'red'">About</a></li>
+                <li><a href="#" [class.active]="!isActive">Services</a></li>
+                <li><a href="#" class="last" [class.active]="isActive">Contact</a></li>
+            </ul>
+
+            <hr>
+
+            <div class="alert alert-success" role="alert">
+                <em>Event binding examples</em>
+            </div>
+
+            <h3>Click event</h3>
+
+            <button type="button" class="btn btn-info" (click)="onClick()">Click me</button>
+
+            <h3>Keyup event <small class="text-muted">do not forget to open Console to see the effect</small></h3>
+            <textarea class="form-control" (keyup)="onKeyup()"></textarea>
+
+            <h3>Mouseover event <small class="text-muted">do not forget to open Console to see the effect</small></h3>
+
+            <p (mouseover)="onMouseover()">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla a consectetur ligula. Donec enim eros, laoreet eu tellus vitae, blandit ultrices neque. In sit amet auctor ligula, ut varius mi. Vestibulum hendrerit efficitur posuere. Suspendisse condimentum metus nec tempus malesuada. Phasellus et est vel lorem tincidunt lobortis eu sed risus. Phasellus pretium dolor ac orci euismod congue et eu arcu. Morbi pharetra nisl eu lectus fermentum, non volutpat odio imperdiet. Duis a turpis nisl.</p>
+
+            <hr>
+
+            <div class="alert alert-success" role="alert">
+                <em>Two-way binding example</em>
+            </div>
+
+            <h3>Start typing in input field</h3>
+            <input type="text" class="form-control" [(ngModel)]="iValue">
+            <p>value: <strong>{{ iValue }}</strong></p>
+        </div>
+
+        <footer class="col-sm-12">
+            <p>{{ title }}</p>
+        </footer>
+    </div>
+</div>
